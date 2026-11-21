@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-11-21",
+  "recent_reports": [
+    "reports/2026-11-20.md",
+    "reports/2026-11-21.md"
+  ],
+  "papers": [
+    {
+      "title": "CONCORD-Rec: Catalog-Conditioned Modality Utility for Semantic-ID Diffusion Recommendation",
+      "id_or_url": "arXiv:2611.23710",
+      "url": "https://arxiv.org/abs/2611.23710",
+      "published_date": "2026-11-19",
+      "read_version": "v1",
+      "covered_date": "2026-11-20",
+      "key_findings": "腾讯等在SID离散扩散推荐中引入可行目录支撑集上的反事实模态效用监督与可用性掩码token门控，缓解多模态缺失/冲突噪声；公开基准MicroLens-100K整体NDCG@20 +4%，30%冲突下+14.63%，尚未见千万级目录或线上广告验证。"
+    },
+    {
+      "title": "X-split Argus: Learning Reusable History Tokens for Efficient CTR Prediction",
+      "id_or_url": "arXiv:2611.24283",
+      "url": "https://arxiv.org/abs/2611.24283",
+      "published_date": "2026-11-18",
+      "read_version": "v1",
+      "covered_date": "2026-11-20",
+      "key_findings": "端到端联合训练离线历史压缩器（输出可复用历史token）与在线Cross-Attention广告精排，并结合全量历史大教师蒸馏；RTB在线A/B报告NE下降、广告主转化价值+4.65%、点击+2.96%（转化价值不等同平台广告收入）。"
+    },
+    {
+      "title": "Optimize the Cob, Then the Kernel: Optimizing Beam Search for Generative Recommendation Inference",
+      "id_or_url": "arXiv:2611.23339",
+      "url": "https://arxiv.org/abs/2611.23339",
+      "published_date": "2026-11-17",
+      "read_version": "v1",
+      "covered_date": "2026-11-20",
+      "key_findings": "华为提出以Tree Attention展平宽Beam、静态KV Cache分配、预生成局部Mask及TorchAir图编译为主的系统流水线优化，在昇腾NPU上较vLLM降低最高25x端到端延迟并与定制Kernel基线持平；尚未见公开代码与GPU实测。"
+    },
+    {
+      "title": "Learning to Reason with Predictive Gains for Generative Recommendation",
+      "id_or_url": "arXiv:2611.21441",
+      "url": "https://arxiv.org/abs/2611.21441",
+      "published_date": "2026-11-16",
+      "read_version": "v1",
+      "covered_date": "2026-11-20",
+      "key_findings": "人大与阿里国际提出GainReason（已开源），用每步推理对目标SID对数似然的Predictive Gain构造细粒度奖励（PGRO+PGRU），解决GRPO组内奖励区分度弱与单步贡献不可测问题；显式文本推理延迟较高，更适合离线蒸馏或思路迁移。"
+    },
+    {
+      "title": "Exploration of Reinforcement Learning in Generative Recommendation Models",
+      "id_or_url": "arXiv:2611.19742",
+      "url": "https://arxiv.org/abs/2611.19742",
+      "published_date": "2026-11-15",
+      "read_version": "v1",
+      "covered_date": "2026-11-20",
+      "key_findings": "中科大与快手从Logit梯度视角定位GRPO在GR中的裁剪梯度死区、负优势失控和缺乏绝对置信度感知问题，提出有界对称且置信度加权的GBPO；公开检索摘要主要验证公开基准，未披露本篇独立在线广告收入A/B。"
+    },
+    {
+      "title": "Better Rankers, Worse Retrievers: The Hidden Cost of RL Post-Training in Generative Recommendation",
+      "id_or_url": "arXiv:2611.22838",
+      "url": "https://arxiv.org/abs/2611.22838",
+      "published_date": "2026-11-17",
+      "read_version": "v1",
+      "covered_date": "2026-11-21",
+      "key_findings": "HKUST与携程团队发现GR的RL后训练虽提升头部NDCG@10，但因对单条日志外的合理候选统一施加负优势，系统性拉低数百候选规模召回（如Hit@500）；提出Out-of-Rollout Anchoring锚定SFT邻域相对序，在保持头部精度的同时恢复宽池召回。"
+    },
+    {
+      "title": "LQ-Rec: Late Quantization for Sequential Recommendation",
+      "id_or_url": "arXiv:2611.25256",
+      "url": "https://arxiv.org/abs/2611.25256",
+      "published_date": "2026-11-18",
+      "read_version": "v1",
+      "covered_date": "2026-11-21",
+      "key_findings": "ICDM 2026录用工作，提出非自回归Late Quantization范式，将离散化严格限制在商品输出侧，编码器与打分全程留于连续空间；具备可加误差分解与成对保序定理界，通过S2H-QA+Prefix-MQA实现随SID长度单调提升及推理期随时截断（Anytime Compression）。"
+    },
+    {
+      "title": "CARE: Contrastive-Anchored Residual Encoding with Listwise Reconstruction for Retrieval-Oriented Semantic IDs",
+      "id_or_url": "arXiv:2611.20721",
+      "url": "https://arxiv.org/abs/2611.20721",
+      "published_date": "2026-11-16",
+      "read_version": "v1",
+      "covered_date": "2026-11-21",
+      "key_findings": "腾讯提出面向检索的SID分词器CARE-SID（已部署于工业视频搜索）与CARE-LR，通过零初始化残差对比对齐、锚定损失与Listwise重建蒸馏弥补传统商品侧量化脱离检索目标的缺陷，并指出底层嵌入质量对SID召回的影响远大于量化器本身。"
+    },
+    {
+      "title": "IntentGR: Enhancing Intent for End-to-End Personalized Generative Retrieval in Search",
+      "id_or_url": "arXiv:2611.22788",
+      "url": "https://arxiv.org/abs/2611.22788",
+      "published_date": "2026-11-17",
+      "read_version": "v1",
+      "covered_date": "2026-11-21",
+      "key_findings": "浙大与阿里国际（WSDM 2027 Findings）提出QBR、QSA、长尾Query富化LQE与Query条件注意力调制QAM四阶段意图增强GR框架，缓解SID向高频token漂移；在AOL4PS与工业电商AE上Recall@10分别+8.11%与+11.96%，长尾提升显著。"
+    },
+    {
+      "title": "MARS Technical Report",
+      "id_or_url": "arXiv:2611.24006",
+      "url": "https://arxiv.org/abs/2611.24006",
+      "published_date": "2026-11-18",
+      "read_version": "v1",
+      "covered_date": "2026-11-21",
+      "key_findings": "淘宝提出多阶段Agent编排系统MARS，用近线Qwen3-0.6B异步写入iGraph动态决策7维链路配置（配额/模型/融合权重等），经Confidence-Aware SFT+FAPO+Sandbox回放GRPO训练；淘宝超千万DAU两周A/B报告V2P最高+5.22%、GMV最高+7.34%（不等同平台广告收入）、主链路均延迟-12ms。"
+    },
+    {
+      "title": "Keep it Simple! A Multiple-Choice Task can Benefit Generative Recommendation",
+      "id_or_url": "arXiv:2611.19320",
+      "url": "https://arxiv.org/abs/2611.19320",
+      "published_date": "2026-11-14",
+      "read_version": "v1",
+      "covered_date": "2026-11-21",
+      "key_findings": "在GR的SFT阶段通过Task Identifiers与候选构造引入极简多项选择辅助任务，对齐BPR相对排序思想且无额外线上推理开销；在4个公开基准上报告相对TIGER等基线NDCG@10提升4.9%至79%，尚无工业广告或宽池召回验证。"
+    }
+  ]
+}
