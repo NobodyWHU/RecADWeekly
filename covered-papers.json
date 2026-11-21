@@ -104,6 +104,69 @@
       "read_version": "v1",
       "covered_date": "2026-11-21",
       "key_findings": "在GR的SFT阶段通过Task Identifiers与候选构造引入极简多项选择辅助任务，对齐BPR相对排序思想且无额外线上推理开销；在4个公开基准上报告相对TIGER等基线NDCG@10提升4.9%至79%，尚无工业广告或宽池召回验证。"
+    },
+    {
+      "title": "TokenFormer V2: Breaking the Resolution–Complexity Dilemma in Unified Recommendation",
+      "id_or_url": "arXiv:2611.19074",
+      "url": "https://arxiv.org/abs/2611.19074",
+      "published_date": "2026-11-14",
+      "read_version": "v1",
+      "covered_date": "2026-11-21",
+      "key_findings": "腾讯等提出局部-全局交互分解（分组布局、层次归并、NS Fusion与Global Sync）加候选感知Full-Resolution Readout，在TAAC 2026以约5.1x更少FLOPs超越MixFormer；微信视频号广告十亿参数评测AUC最高+0.07pp，线上A/B报告GMV +2.33%（不等同平台广告收入）。"
+    },
+    {
+      "title": "Learning Generative Ranking Policies for Whole-Page Optimization",
+      "id_or_url": "arXiv:2611.25527",
+      "url": "https://arxiv.org/abs/2611.25527",
+      "published_date": "2026-11-19",
+      "read_version": "v1",
+      "covered_date": "2026-11-21",
+      "key_findings": "Meta提出Whole-Page Policy Improvement，将整页生成重排目标拆分为逐位置训练目标，以补全完整页面的最终得分评估各槽位候选，克服整页均摊奖励噪声与静态目标页模仿缺陷，在KuaiRand-1K、RL4RS-SeqSlate及工业日志页面优于基线。"
+    },
+    {
+      "title": "KVUse: Reusable-KV User Memory for Efficient LLM Recommenders",
+      "id_or_url": "arXiv:2611.21920",
+      "url": "https://arxiv.org/abs/2611.21920",
+      "published_date": "2026-11-16",
+      "read_version": "v1",
+      "covered_date": "2026-11-21",
+      "key_findings": "Meta针对动态前缀导致LLM用户记忆prefix cache失效的问题，用自蒸馏LoRA Reusable-KV Writer直接产出可跨上下文拼接复用的KV Cache并配合异步KV调度器隐藏传输开销；4个InstructRec数据集上8B模型下游打分吞吐提升4.0x–4.5x且排序质量无显著下降。"
+    },
+    {
+      "title": "Cost-Aware Agentic Feature Optimization System for Fleet-Scale Ranking Models",
+      "id_or_url": "arXiv:2611.26531",
+      "url": "https://arxiv.org/abs/2611.26531",
+      "published_date": "2026-11-19",
+      "read_version": "v1",
+      "covered_date": "2026-11-21",
+      "key_findings": "Meta AI构建LLM假设提出+确定性实验验证的多模型集群特征优化闭环，结合多任务Pareto前沿混合与预算裁剪，在共享特征链路成本与单模型QPS约束下实现离线NE平均+0.31%、链路成本-2.3%、线上A/B主指标+0.20%。"
+    },
+    {
+      "title": "From Sessions to Serving: Integrating LLM-Based Embeddings into Retrieval for Production Content Recommendation",
+      "id_or_url": "arXiv:2611.26096",
+      "url": "https://arxiv.org/abs/2611.26096",
+      "published_date": "2026-11-19",
+      "read_version": "v1",
+      "covered_date": "2026-11-21",
+      "key_findings": "Autodesk提出生产检索系统LSER，将预训练LLM会话与历史向量作为召回用户塔辅助特征与序列编码器并列融合，并通过近线异步服务链路刷新用户向量以兼顾实时新鲜度。"
+    },
+    {
+      "title": "MIPR: A Benchmark for Reasoning-Intensive Multimodal Intent-to-Product Retrieval with Multi-Category Solutions",
+      "id_or_url": "arXiv:2611.22509",
+      "url": "https://arxiv.org/abs/2611.22509",
+      "published_date": "2026-11-16",
+      "read_version": "v1",
+      "covered_date": "2026-11-21",
+      "key_findings": "淘天集团基于淘宝真实搜索日志构建并开源MIPR多模态跨类目意图检索基准（3522查询/30731商品/44.78万5级标注），揭示向量召回与重排的明显鸿沟（nDCG@10 49.23% vs 60.11%）及跨类目覆盖与不可满足负样本瓶颈。"
+    },
+    {
+      "title": "Beyond Covers and Titles: Evidence-First Ranking for Robust Cold-Start Recommendation",
+      "id_or_url": "arXiv:2611.26249",
+      "url": "https://arxiv.org/abs/2611.26249",
+      "published_date": "2026-11-19",
+      "read_version": "v1",
+      "covered_date": "2026-11-21",
+      "key_findings": "提出经真实转码管线的包装攻击REAP并证明冷启依赖封面/标题易被虚抬32.0个排序百分位；提出Evidence-First Ranking（EFR）以本体证据主干加有界支持门控包装残差并按分位合并冷热排序，MicroLens-100K上削减81%攻击增益且冷启Recall@100从0.1133升至0.170。"
     }
   ]
 }
