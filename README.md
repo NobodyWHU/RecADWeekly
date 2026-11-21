@@ -29,8 +29,9 @@
 | 2026-11-21 | 2026-11-14 至 2026-11-21 | 6 篇 | [reports/2026-11-21.md](./reports/2026-11-21.md) |
 | 2026-11-20 | 2026-11-13 至 2026-11-20 | 5 篇 | [reports/2026-11-20.md](./reports/2026-11-20.md) |
 
-## Agent 定时设置
+## Agent 定时设置与自动同步
 
 - **运行频率**：每周一、周五 08:00（`Asia/Shanghai`），对应 cron `CRON_TZ=Asia/Shanghai 0 8 * * 1,5`
 - **配置文件**：[agent/sidecar.json](./agent/sidecar.json) / [agent/PROMPT.md](./agent/PROMPT.md)
 - **去重机制**：每次运行先读取 [covered-papers.json](./covered-papers.json) 与最近两期周报，无实质版本更新（`v2`/`v3`、新开源代码或新增关键实验）的已覆盖论文不会重复推荐。
+- **自动同步**：每次生成周报后自动更新本 `README.md` 归档表与 `covered-papers.json`，并自动 `git commit && git push origin main` 同步至本仓库。

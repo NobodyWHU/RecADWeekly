@@ -2,6 +2,7 @@
 
 - **任务名称**：电商广告研究周报（`ecommerce-ads-research-report`）
 - **调度周期**：`CRON_TZ=Asia/Shanghai 0 8 * * 1,5`（每周一、周五北京时间 08:00）
+- **自动同步仓库**：`https://github.com/NobodyWHU/RecADWeekly`（分支 `main`）
 - **完整 Sidecar 配置文件**：[sidecar.json](./sidecar.json)（本地部署时请将 `<HOME>` 替换为实际用户主目录并放至 `~/.gemini/config/sidecars/ecommerce-ads-research-report/sidecar.json`）
 
 ---
@@ -46,6 +47,11 @@
    - 严禁直接移植论文收益数字，严禁虚构来源、日期、版本、实验、章节图表号与引用；全文无法读取时明确说明证据范围。
 
 7. **持久化与保存**：
-   - 使用 `write_file` 将完整周报保存至 `reports/YYYY-MM-DD.md`（日期取当前 Asia/Shanghai 日期）。
+   - 使用 `write_file` 将完整周报保存至 `reports/YYYY-MM-DD.md`（日期取当前 Asia/Shanghai 日期）；报告内引用 `covered-papers.json` 或往期报告时使用相对路径（如 `../covered-papers.json`、`./YYYY-MM-DD.md`），避免写入本机绝对路径。
    - 更新 `covered-papers.json`：更新 `last_updated`，将本期报告相对路径追加到 `recent_reports`，并将本期新覆盖或有版本更新的研究写入/更新到 `papers` 数组（包含 `title`、`id_or_url`、`url`、`published_date`、`read_version`、`covered_date`、`key_findings`）。
+   - 更新 `README.md` 中的「周报归档」表格，在表格顶部新增本期周报条目（期数日期、检索窗口、收录数量、相对链接）。
+
+8. **自动同步至 GitHub 仓库（`https://github.com/NobodyWHU/RecADWeekly`）**：
+   - 在项目根目录依次执行 `git status --short`、`git add README.md covered-papers.json reports/ agent/`、`git commit -m "chore: add weekly report YYYY-MM-DD"`、`git push origin main`（若远端有新提交，先 `git pull --rebase origin main` 再推送）。
+   - 若因网络或凭据失败，保留本地提交并在回复中提示手动推送命令，不泄露任何凭据。
    - 不要关闭或修改任何其他平台的任务。
